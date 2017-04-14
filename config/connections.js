@@ -65,6 +65,21 @@ module.exports.connections = {
   //   database: 'your_mongo_db_name_here' //optional
   // },
 
+  openshiftMongo: {
+    adapter: 'sails-mongo',
+    host: process.env.OPENSHIFT_MONGODB_DB_HOST,
+    port: process.env.OPENSHIFT_MONGODB_DB_PORT || '57191',
+    user: process.env.OPENSHIFT_MONGODB_DB_USERNAME || 'admin',
+    password: process.env.OPENSHIFT_MONGODB_DB_PASSWORD || 'b1ZBg8KFwGEF',
+    database: process.env.OPENSHIFT_APP_NAME || 'front'
+  },
+  
+  mlabMongoTest: {
+    adapter: 'sails-mongo',
+    url: 'mongodb://fronter:fronter@ds161580.mlab.com:61580/sbldev-front'
+  }
+
+
   /***************************************************************************
   *                                                                          *
   * PostgreSQL is another officially supported relational database.          *

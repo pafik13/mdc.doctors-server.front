@@ -1,0 +1,24 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <!-- Material -->
+  <div  id="materials" ng-controller="MaterialController as materialCntrl">
+    <page-with-tiles 
+      page-header="Матералы для показа" 
+      add-button-caption="Добавить материал" 
+      model-meta="materialCntrl.meta" 
+      items="materialCntrl.materials" 
+      loaded="materialCntrl.loaded" 
+      tile-class="panel-red" 
+      tile-icon="fa fa-pie-chart fa-5x" 
+      field-for-tile-caption="name" 
+      field-for-tile-r-row-1="name" 
+      create-id="material_add" 
+      create-caption="Новый матерал для показа" 
+      modal-create-template="/templates/modal/material.html" 
+      update-id="material_upd" 
+      update-caption="Обновление:" 
+      field-for-update-caption="name" 
+      modal-update-template="/templates/modal/material.html">
+    </page-with-tiles>
+  </div>
+  <!-- ./Material -->
+</div>

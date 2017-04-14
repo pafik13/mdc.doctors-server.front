@@ -33,9 +33,168 @@
     <!--STYLES END-->
   </head>
 
-  <body>
+  <body ng-app="App">
+    
+    <!--NAVBAR-->
+    <%if (typeof isHideNavBar == 'undefined') { %>        
+
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="#">Settings</a></li>
+              <li><a href="/signin">Profile</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+              <input type="text" class="form-control" placeholder="Search...">
+            </form>
+          </div>
+        </div>
+      </nav>
+      
+    <% } %>
+    <!--NAVBAR-END-->
+
+    <div class="container-fluid">
+      <div class="row">
+        
+        <%if (typeof isHideSideBar == 'undefined') { %>        
+
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <%if (typeof menu !== 'undefined') { %>        
+              <%if (menu == 'main') { %>
+                <li class="active"><a href="/main">Overview<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/main">Overview</a></li>
+              <% } %>
+              
+              <%if (menu == 'agents') { %>
+                <li class="active"><a href="/agents">Представители<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/agents">Представители</a></li>
+              <% } %>
+  
+              <%if (menu == 'nets') { %>
+                <li class="active"><a href="/nets">Аптечные сети<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/nets">Аптечные сети</a></li>
+              <% } %>
+              
+              <%if (menu == 'contracts') { %>
+                <li class="active"><a href="/contracts">Контракты<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/contracts">Контракты</a></li>
+              <% } %>
+              
+              <%if (menu == 'categories') { %>
+                <li class="active"><a href="/categories">Категории аптеки<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/categories">Категории аптеки</a></li>
+              <% } %>
+
+              <%if (menu == 'places') { %>
+                <li class="active"><a href="/places">Места расположения<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/places">Места расположения</a></li>
+              <% } %>
+              
+              <%if (menu == 'positions') { %>
+                <li class="active"><a href="/positions">Должности сотрудников<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/positions">Должности сотрудников</a></li>
+              <% } %>
+              
+              <%if (menu == 'regions') { %>
+                <li class="active"><a href="/regions">Районы городов<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/regions">Районы городов</a></li>
+              <% } %>
+              
+              <%if (menu == 'subways') { %>
+                <li class="active"><a href="/subways">Станции метро<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/subways">Станции метро</a></li>
+              <% } %>  
+              
+              <%if (menu == 'listedhospitals') { %>
+                <li class="active"><a href="/listedhospitals">Больницы для списка<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/listedhospitals">Больницы для списка</a></li>
+              <% } %>
+            <% } %>
+
+          </ul>
+          <ul class="nav nav-sidebar">
+            <%if (typeof menu !== 'undefined') { %>        
+
+              <%if (menu == 'drugbrands') { %>
+                <li class="active"><a href="/drugbrands">Бренды препаратов<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/drugbrands">Бренды препаратов</a></li>
+              <% } %>
+              
+              <%if (menu == 'drugskus') { %>
+                <li class="active"><a href="/drugskus">SKU препаратов<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/drugskus">SKU препаратов</a></li>
+              <% } %>
+              
+              <%if (menu == 'worktypes') { %>
+                <li class="active"><a href="/worktypes">Виды работ на визите<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/worktypes">Виды работ на визите</a></li>
+              <% } %>
+              
+              <%if (menu == 'promotions') { %>
+                <li class="active"><a href="/promotions">Акции на визите<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/promotions">Акции на визите</a></li>
+              <% } %>
+              
+              <%if (menu == 'messagetypes') { %>
+                <li class="active"><a href="/messagetypes">Типы сообщений<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/messagetypes">Типы сообщений</a></li>
+              <% } %>
+              
+              <%if (menu == 'phototypes') { %>
+                <li class="active"><a href="/phototypes">Типы фотографий<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/phototypes">Типы фотографий</a></li>
+              <% } %>
+              
+              <%if (menu == 'materials') { %>
+                <li class="active"><a href="/materials">Матералы для показа<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/materials">Матералы для показа</a></li>
+              <% } %>
+
+            <% } %>
+          </ul>
+        </div>
+        
+        <% } %>
+
+    <!--
+        Body of Document
+        ========================
+    -->
     <%- body %>
 
+      </div>
+    </div>
 
 
     <!--
@@ -86,6 +245,11 @@
           + Use a different preprocessor, like TypeScript
 
     -->
+    <script src="https://cdn.jsdelivr.net/lodash/4.15.0/lodash.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
 
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>

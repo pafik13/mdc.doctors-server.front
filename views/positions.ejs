@@ -1,0 +1,24 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <!-- Position -->
+  <div  id="positions" ng-controller="PositionController as positionCntrl">
+    <page-with-tiles 
+      page-header="Должности сотрудников" 
+      add-button-caption="Добавить должность" 
+      model-meta="positionCntrl.meta" 
+      items="positionCntrl.positions" 
+      loaded="positionCntrl.loaded" 
+      tile-class="panel-yellow" 
+      tile-icon="fa fa-graduation-cap fa-5x" 
+      field-for-tile-caption="name" 
+      field-for-tile-r-row-1="name" 
+      create-id="position_add" 
+      create-caption="Новая должность сотрудника" 
+      modal-create-template="/templates/modal/position.html" 
+      update-id="position_upd" 
+      update-caption="Обновление:" 
+      field-for-update-caption="name" 
+      modal-update-template="/templates/modal/position.html">
+    </page-with-tiles>
+  </div>
+  <!-- ./Position -->
+</div>

@@ -1,0 +1,24 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <!-- WorkType -->
+  <div  id="worktypes" ng-controller="WorkTypeController as workTypeCntrl">
+    <page-with-tiles 
+      page-header="Виды работ на визите" 
+      add-button-caption="Добавить вид" 
+      model-meta="workTypeCntrl.meta" 
+      items="workTypeCntrl.worktypes" 
+      loaded="workTypeCntrl.loaded" 
+      tile-class="panel-yellow" 
+      tile-icon="fa fa-question-circle-o fa-5x" 
+      field-for-tile-caption="name" 
+      field-for-tile-r-row-1="name" 
+      create-id="worktype_add" 
+      create-caption="Новый вид работы" 
+      modal-create-template="/templates/modal/workType.html" 
+      update-id="worktype_upd" 
+      update-caption="Обновление:" 
+      field-for-update-caption="name" 
+      modal-update-template="/templates/modal/workType.html">
+    </page-with-tiles>
+  </div>
+  <!-- ./WorkType -->
+</div>

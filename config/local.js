@@ -29,6 +29,8 @@
 
 module.exports = {
 
+  hookTimeout: 90000, // 90 seconds
+
   /***************************************************************************
    * Your SSL certificate and key, if you want to be able to serve HTTP      *
    * responses over https:// and/or use websockets over the wss:// protocol  *
@@ -61,8 +63,8 @@ module.exports = {
    ***************************************************************************/
 
   // port: process.env.PORT || 1337,
-  port: process.env.OPENSHIFT_NODEJS_PORT,
-  host: process.env.OPENSHIFT_NODEJS_IP,
+  host: process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1",
+  port: process.env.OPENSHIFT_NODEJS_PORT || 8080,  
     
   /***************************************************************************
    * The runtime "environment" of your Sails app is either typically         *

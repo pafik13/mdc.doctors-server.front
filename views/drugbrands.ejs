@@ -1,0 +1,25 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <!-- DrugBrand -->
+  <div id="drugbrands" ng-controller="DrugBrandController as drugBrandCntrl">
+    <page-with-tiles 
+      page-header="Бренды препаратов" 
+      add-button-caption="Добавить бренд" 
+      model-meta="drugBrandCntrl.meta" 
+      items="drugBrandCntrl.drugBrands" 
+      loaded="drugBrandCntrl.loaded" 
+      tile-class="panel-primary" 
+      tile-icon="fa fa-trademark fa-5x" 
+      field-for-tile-caption="name" 
+      field-for-tile-r-row-1="name" 
+      create-id="drugbrand_add" 
+      create-caption="Новый бренд" 
+      before-create-params="drugBrandCntrl.params" 
+      modal-create-template="/templates/modal/drugBrand.html" 
+      update-id="drugbrand_upd"
+      update-caption="Обновление:" 
+      field-for-update-caption="name" 
+      modal-update-template="/templates/modal/drugBrand.html">
+    </page-with-tiles>
+  </div>
+  <!-- ./DrugBrand -->
+</div>
