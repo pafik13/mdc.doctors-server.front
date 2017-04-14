@@ -17,8 +17,8 @@ module.exports.models = {
   * connections (see `config/connections.js`)                                *
   *                                                                          *
   ***************************************************************************/
-  // connection: 'localDiskDb',
-  connection: 'openshiftMongo',
+  connection: 'localDiskDb',
+  // connection: 'openshiftMongo',
   // connection: 'mlabMongoTest',
 
   /***************************************************************************
