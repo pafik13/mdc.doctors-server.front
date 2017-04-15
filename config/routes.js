@@ -32,9 +32,140 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  }
+  // '/': {
+  //   view: 'homepage'
+  // },
+  
+  // '/main': {
+  //   view: 'main',
+  //   locals: {
+  //     menu: 'main'
+  //   }
+  // },
+  
+  // '/report': {
+  //   view: 'report'
+  // },
+  
+  '/signin': {
+    view: 'signin',
+    locals: {
+      isHideSideBar: true,
+      isHideNavBar: true
+    }
+  },
+  
+  // '/nets': {
+  //   view: 'nets',
+  //   locals: {
+  //     menu: 'nets'
+  //   }
+  // },
+  
+  // '/agents': {
+  //   view: 'agents',
+  //   locals: {
+  //     menu: 'agents'
+  //   }
+  // },
+  
+  // '/contracts': {
+  //   view: 'contracts',
+  //   locals: {
+  //     menu: 'contracts'
+  //   }
+  // },
+  
+  // '/drugbrands': {
+  //   view: 'drugbrands',
+  //   locals: {
+  //     menu: 'drugbrands'
+  //   }
+  // },
+  
+  // '/drugskus': {
+  //   view: 'drugskus',
+  //   locals: {
+  //     menu: 'drugskus'
+  //   }
+  // },
+  
+  // '/messagetypes': {
+  //   view: 'messagetypes',
+  //   locals: {
+  //     menu: 'messagetypes'
+  //   }
+  // },
+  
+  // '/phototypes': {
+  //   view: 'phototypes',
+  //   locals: {
+  //     menu: 'phototypes'
+  //   }
+  // },
+  
+  // '/places': {
+  //   view: 'places',
+  //   locals: {
+  //     menu: 'places'
+  //   }
+  // },
+  
+  // '/positions': {
+  //   view: 'positions',
+  //   locals: {
+  //     menu: 'positions'
+  //   }
+  // },
+  
+  // '/promotions': {
+  //   view: 'promotions',
+  //   locals: {
+  //     menu: 'promotions'
+  //   }
+  // },
+  
+  // '/categories': {
+  //   view: 'categories',
+  //   locals: {
+  //     menu: 'categories'
+  //   }
+  // },
+  
+  // '/regions': {
+  //   view: 'regions',
+  //   locals: {
+  //     menu: 'regions'
+  //   }
+  // },
+  
+  // '/subways': {
+  //   view: 'subways',
+  //   locals: {
+  //     menu: 'subways'
+  //   }
+  // },
+
+  // '/worktypes': {
+  //   view: 'worktypes',
+  //   locals: {
+  //     menu: 'worktypes'
+  //   }
+  // },
+  
+  // '/materials': {
+  //   view: 'materials',
+  //   locals: {
+  //     menu: 'materials'
+  //   }
+  // },
+  
+  // '/listedhospitals': {
+  //   view: 'listedhospitals',
+  //   locals: {
+  //     menu: 'listedhospitals'
+  //   }
+  // },
 
   /***************************************************************************
   *                                                                          *
@@ -46,4 +177,59 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  'get /' : 'ViewController.home',
+  'get /nets' : 'ViewController.nets',
+  'get /agents' : 'ViewController.agents',
+  'get /contracts' : 'ViewController.contracts',
+  'get /drugbrands' : 'ViewController.drugbrands',
+  'get /drugskus' : 'ViewController.drugskus',
+  'get /messagetypes' : 'ViewController.messagetypes',
+  'get /phototypes' : 'ViewController.phototypes',
+  'get /places' : 'ViewController.places',
+  'get /positions' : 'ViewController.positions',
+  'get /promotions' : 'ViewController.promotions',
+  'get /categories' : 'ViewController.categories',
+  'get /regions' : 'ViewController.regions',
+  'get /subways' : 'ViewController.subways',
+  'get /worktypes' : 'ViewController.worktypes',
+  'get /materials' : 'ViewController.materials',
+  'get /listedhospitals' : 'ViewController.listedhospitals',
+
+
+
+  'get /net/options' : 'NetController.options',
+  'get /place/options' : 'PlaceController.options',
+  'get /region/options' : 'RegionController.options',
+  'get /subway/options' : 'SubwayController.options',
+  'get /categorybynet/options' : 'CategoryController.bynetoptions',
+  'get /categorybysell/options' : 'CategoryController.byselloptions',
+  
+  'GET /worktype': {
+    blueprint: "find", 
+    criteria: {
+        blacklist: ["access_token", "limit", "skip", "sort", "populate"]
+  },
+  
+  'get /agent/byjwt' : 'AgentController.byjwt',
+  
+  'get /pharmacy/byjwt' : 'PharmacyController.byjwt',
+  'get /employee/byjwt' : 'EmployeeController.byjwt',
+
+  'post /photodata/upload' : 'PhotoDataController.upload',
+  
+  // 'GET /attendance': {
+  //   blueprint: "find", 
+  //   criteria: {
+  //       blacklist: ["access_token", "limit", "skip", "sort", "populate"]
+  //   }
+  // },
+  
+  // 'GET /coteriedata': {
+  //   blueprint: "find", 
+  //   criteria: {
+  //       blacklist: ["access_token", "limit", "skip", "sort", "populate"]
+  //   }
+  // },
+}
+  
 };
