@@ -41,6 +41,34 @@ module.exports = {
       required: true,
       unique: true
     },
+    
+    s3ETag: {
+      type: 'string'
+    },
+    
+    s3Location: {
+      type: 'url',
+      required: true
+    },
+    
+    s3Key: {
+      type: 'string'
+    },
+    
+    s3Bucket: {
+      type: 'string',
+    },
+    
+    isForPharmacies: {
+      type: 'boolean',
+      defaultsTo: false
+    },
+    
+    isForDoctors: {
+      type: 'boolean',
+      defaultsTo: false
+    }
+    
   }
 };
 

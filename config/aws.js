@@ -3,8 +3,9 @@
  * (sails.config.aws)
  *
  */
-var aws = require('aws-sdk');
-var fs = require('fs');
+var aws = require('aws-sdk'),
+     fs = require('fs'),
+      _ = require("lodash");
 
 module.exports.aws = {
   apiKey: 'AKIAIIOVEZZ4O4DK26PA',
@@ -15,7 +16,7 @@ module.exports.aws = {
   /* global sails */
   test: function(){
     sails.log.info(sails.config.appPath);
-    var dir = sails.config.appPath + "/upload/images";
+    var dir = sails.config.appPath + "/files";
     fs.readdir(dir, function(err, files) {
       if (err) {
         throw err;
@@ -23,8 +24,11 @@ module.exports.aws = {
       
       console.log(files);
    
-      //var k = found.photoPath.replace(/^.*[\\\/]/, '');
-      var file = files[1];
+      // //var k = found.photoPath.replace(/^.*[\\\/]/, '');
+      var file = files[0];
+      console.log(file);
+      console.log(file.split('-'));
+      console.log(file.split('-', 1));
       
       // AMAZON AWS S3
       aws.config.update({
@@ -46,7 +50,29 @@ module.exports.aws = {
               ACL: 'public-read'
           };
           var request = s3.upload(params);
-          request.send(function(err, data) { console.log(err, data) });
+          request.send(function(err, data) {
+            if (err) throw err;
+            
+            console.log(data);
+            
+            var material = {
+              name: 'Тестовый материал : ' + file.split('-', 1),
+              s3ETag: data.ETag,
+              s3Location: data.Location,
+              s3Key: data.Key,
+              s3Bucket: data.Bucket,
+              isForPharmacies: true,
+              isForDoctors: true
+            };
+
+            Material.create(material).exec(
+              function(err, record){
+                if (err) throw err;
+                
+                console.log(record);
+              });
+            
+          });
       });
       console.log(sails.config.aws.endPoint + '/' + file);
       // for (var i=0; i<files.length; i++) {
