@@ -1,5 +1,5 @@
 /**
- * Position.js
+ * Specialty.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
@@ -9,14 +9,14 @@ var uuid = require("uuid");
 
 /**
  * Должность.
- * @namespace Position
+ * @namespace Specialty
  */
 module.exports = {
 
   attributes: {
     /**
      * Уникальный идентификатор должности
-     * @memberof Position
+     * @memberof Specialty
      * @type {object}
      */
     uuid: {
@@ -33,7 +33,7 @@ module.exports = {
 
     /**
      * Наименование должности
-     * @memberof Position
+     * @memberof Specialty
      * @type {object}
      */    
     name: {
@@ -50,7 +50,7 @@ module.exports = {
       
       agents.forEach(function(item, index, arr){
         var rec = {
-          model: "Position",
+          model: "Specialty",
           uuid: values.uuid,
           action: "create",
           agent: item.uuid
@@ -71,7 +71,7 @@ module.exports = {
       
       agents.forEach(function(item, index, arr){
         var rec = {
-          model: "Position",
+          model: "Specialty",
           uuid: values.uuid,
           action: "update",
           agent: item.uuid
@@ -92,7 +92,7 @@ module.exports = {
       
       agents.forEach(function(item, index, arr){
         var rec = {
-          model: "Position",
+          model: "Specialty",
           uuid: values.uuid,
           action: "delete",
           agent: item.uuid
