@@ -117,4 +117,16 @@ module.exports = {
         });
     },
 
+    categoryrules: function(req, res) {
+        return res.view('categoryrules', {
+            menu: 'categoryrules'
+        });
+    },
+    
+    s3callback: function(req, res) {
+        var allParams = req.params.all();
+        
+        return res.json(allParams);
+    },
+    
 };
