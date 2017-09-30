@@ -39,28 +39,11 @@
   <input class="form-control" ng-model="last.entity.city" ng-change="last.change()" type="text" placeholder="Город работы">
 </div>
 <div class="form-group">
-  <input class="form-control" ng-model="last.entity.area" ng-change="last.change()" type="text" placeholder="Округ работы">
-</div>
-<div class="form-group">
-  <input class="form-control" ng-model="last.entity.manager" ng-change="last.change()" type="text" placeholder="ФИО менеджера">
-</div>
-<div class="form-group">
-  <input class="form-control" ng-model="last.entity.status" ng-change="last.change()" type="text" placeholder="Статус">
-</div>
-<div class="form-group">
-  <input class="form-control" ng-model="last.entity.hostURL" ng-change="last.change()" type="text" placeholder="Сервер обслуживания">
-</div>
-<div class="form-group">
   <input class="form-control" ng-model="last.entity.weeksInRout" ng-change="last.change()" type="number" min="0" max="5" placeholder="Количество недель в маршруте">
 </div>
 <div class="form-group">
   <label for="agentWorkmode">Режим работы:</label>
   <select class="form-control" name="agentWorkmode" id="agentWorkmode" ng-options="option.name for option in last.refs.workmodes track by option.id" ng-model="last.entity.workMode" ng-change="last.change()" ng-disabled="last.refs.workmodes.length == 0">
-  </select>
-</div>
-<div class="form-group">
-  <label for="agentMaterialType">Тип материалов:</label>
-  <select class="form-control" name="agentMaterialType" id="agentMaterialType" ng-options="option.name for option in last.refs.materialtypes track by option.id" ng-model="last.entity.materialType" ng-change="last.change()" ng-disabled="last.refs.materialtypes.length == 0">
   </select>
 </div>
 <div class="form-group">

@@ -110,6 +110,12 @@
               <% } else { %>
                 <li><a href="/categories">Категории аптеки</a></li>
               <% } %>
+              
+              <%if (menu == 'categoryrules') { %>
+                <li class="active"><a href="/categoryrules">Правила категорий<span class="sr-only">(current)</span></a></li>
+              <% } else { %>
+                <li><a href="/categoryrules">Правила категорий</a></li>
+              <% } %>
 
               <%if (menu == 'places') { %>
                 <li class="active"><a href="/places">Места расположения<span class="sr-only">(current)</span></a></li>
@@ -194,11 +200,11 @@
         
       <% } %>
 
-    <!--
-        Body of Document
-        ========================
-    -->
-    <%- body %>
+      <!--
+          Body of Document
+          ========================
+      -->
+      <%- body %>
 
       </div>
     </div>
@@ -264,17 +270,21 @@
     <script src="/js/dependencies/bootstrap-datepicker.ru.min.js"></script>
     <script src="/js/angular/app.module.js"></script>
     <script src="/js/angular/factories/dataservice.js"></script>
+    <script src="/js/angular/factories/fileUpload.js"></script>
     <script src="/js/angular/factories/lodash.js"></script>
     <script src="/js/angular/directives/datepicker.js"></script>
+    <script src="/js/angular/directives/fileModel.js"></script>
     <script src="/js/angular/directives/modal.js"></script>
     <script src="/js/angular/directives/pageWithTiles.js"></script>
     <script src="/js/angular/directives/popover.js"></script>
     <script src="/js/angular/controllers/AgentController.js"></script>
+    <script src="/js/angular/controllers/CategoryRuleController.js"></script>
     <script src="/js/angular/controllers/DrugBrandController.js"></script>
     <script src="/js/angular/controllers/DrugSKUController.js"></script>
     <script src="/js/angular/controllers/ListedHospitalController.js"></script>
     <script src="/js/angular/controllers/MaterialController.js"></script>
     <script src="/js/angular/controllers/PositionController.js"></script>
+    <script src="/js/angular/controllers/UploadFileController.js"></script>
     <script src="/js/angular/controllers/WorkTypeController.js"></script>
     <!--SCRIPTS END-->
   </body>

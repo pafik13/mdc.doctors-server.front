@@ -1,0 +1,8 @@
+<div class="form-group">
+  <label for="drugSKUBrand">Бренд:</label>
+  <select class="form-control" name="drugSKUBrand" id="drugSKUBrand"  ng-options="option.name for option in last.refs.brands track by option.uuid" ng-model="last.entity.brand" ng-change="last.change()" ng-disabled="last.refs.brands.length == 0">
+  </select>
+</div>
+<div class="form-group">
+  <input class="form-control" ng-model="last.entity.name" ng-change="last.change()" type="text" placeholder="Наименование SKU">
+</div>

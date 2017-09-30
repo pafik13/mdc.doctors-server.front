@@ -1,0 +1,51 @@
+<div class="form-group">
+  <label for="drugSKU">SKU:</label>
+  <select class="form-control" name="drugSKU" id="drugSKU"  ng-options="option.name for option in last.refs.SKUs track by option.uuid" ng-model="last.entity.drugSKU" ng-change="last.change()" ng-disabled="last.refs.SKUs.length == 0">
+  </select>
+</div>
+<div class="form-group">
+  <label>Тип (аптека или сеть):</label>
+  <div class="btn-toolbar" role="toolbar">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default" ng-class="{ 'active' : last.entity.object_type == 'net' }" ng-click="last.entity.object_type = 'net'" aria-label="Аптечная сеть">
+        <i class="fa fa-question-circle-o fa-2x" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn btn-default" ng-class="{ 'active' : last.entity.object_type == 'pharmacy' }" ng-click="last.entity.object_type = 'pharmacy'" aria-label="Аптека">
+        <i class="fa fa-question-circle-o fa-2x" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <input class="form-control" ng-model="last.entity.name" ng-change="last.change()" type="text" placeholder="Тип фотографии">
+</div>
+<div class="checkbox">
+  <label>
+    <input type="checkbox" ng-model="last.entity.isExistence" ng-change="last.change()">
+    Необходимо ли "Наличие"?
+  </label>
+</div>
+<div class="form-group">
+  <input class="form-control" ng-model="last.entity.count" ng-change="last.change()" type="text" placeholder="Необходимое количество">
+</div>
+<div class="form-group">
+  <input class="form-control" ng-model="last.entity.price" ng-change="last.change()" type="text" placeholder="Необходимая цена">
+</div>
+<div class="checkbox">
+  <label>
+    <input type="checkbox" ng-model="last.entity.isPresence" ng-change="last.change()">
+    Необходима ли "Выкладка"?
+  </label>
+</div>
+<div class="checkbox">
+  <label>
+    <input type="checkbox" ng-model="last.entity.hasPOS" ng-change="last.change()">
+    Необходимы ли "POS-материалы"?
+  </label>
+</div>
+<div class="form-group">
+  <input class="form-control" ng-model="last.entity.order" ng-change="last.change()" type="text" placeholder="Необходимый заказ">
+</div>
+<div class="form-group">
+  <input class="form-control" ng-model="last.entity.comment" ng-change="last.change()" type="text" placeholder="Необходимый приход">
+</div>

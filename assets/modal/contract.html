@@ -1,0 +1,11 @@
+<div class="form-group">
+  <label for="contractNet">Аптечная сеть:</label>
+  <select class="form-control" name="contractNet" id="contractNet"  ng-options="option.name for option in last.refs.nets track by option.uuid" ng-model="last.entity.net" ng-change="last.change()" ng-disabled="last.refs.nets.length == 0">
+  </select>
+</div>
+<div class="form-group">
+  <input class="form-control" ng-model="last.entity.name" ng-change="last.change()" type="text" placeholder="Название (номер) контракта">
+</div>
+<div class="form-group">
+  <textarea class="form-control" ng-model="last.entity.description" ng-change="last.change()" rows="3" placeholder="Описание"></textarea>
+</div>

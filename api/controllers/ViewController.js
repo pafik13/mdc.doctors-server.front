@@ -123,6 +123,12 @@ module.exports = {
         });
     },
     
+    uploadfiles: function(req, res) {
+        return res.view('uploadfiles', {
+            menu: 'uploadfiles'
+        });
+    },
+    
     s3callback: function(req, res) {
         var allParams = req.params.all();
         

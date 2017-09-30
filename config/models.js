@@ -18,8 +18,8 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
   // connection: 'localDiskDb',
-  connection: 'openshiftMongo',
-  // connection: 'mlabMongoTest',
+  // connection: 'openshiftMongo',
+  connection: 'mlabMongoTest',
 
   /***************************************************************************
   *                                                                          *

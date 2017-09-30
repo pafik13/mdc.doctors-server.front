@@ -1,0 +1,46 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <div id="uploadfiles" ng-controller="UploadFileController">
+    <!-- Button-->
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-click="addItem()">Add</button>
+    <div class="row h3">
+      <div class="col-md-2">Name</div>
+      <div class="col-md-2">File name</div>
+      <div class="col-md-2">s3Key</div>
+      <div class="col-md-2">s3Bucket</div>
+      <div class="col-md-2">s3Location</div>
+    </div>
+  
+    <div class="row" ng-repeat="item in items">
+      <div class="col-md-2" ng-bind="item.name"></div>
+      <div class="col-md-2" ng-bind="item.fileName"></div>
+      <div class="col-md-2" ng-bind="item.s3Key"></div>
+      <div class="col-md-2" ng-bind="item.s3Bucket"></div>
+      <div class="col-md-2" ng-bind="item.s3Location"></div>
+      <div class="col-md-2">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-click="editItem(item)">Edit</button>
+        <button class="btn" ng-click="removeItem(item)">Remove</button></div>
+      </div>
+    </div>
+  
+    <!-- Modal -->
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-show="displayForm">
+      <div class="modal-dialog">
+        <div class="modal-content">      
+          <div class="modal-body">
+         	  <div class="form-group"><input type="text" ng-model="uploadfile.name" class="form-control" placeholder="Name"/></div>
+            <div class="form-group"><input type="text" ng-model="uploadfile.fileName" class="form-control" placeholder="File name"/></div>
+            <div class="form-group"><input type="text" ng-model="uploadfile.s3Key" class="form-control" placeholder="s3Key"/></div>          
+            <div class="form-group"><input type="text" ng-model="uploadfile.s3Bucket" class="form-control" placeholder="s3Bucket"/></div>          
+            <div class="form-group"><input type="text" ng-model="uploadfile.s3Location" class="form-control" placeholder="s3Location"/></div>
+            <div class="form-group"><input type="file" file-model="myFile"/></div>
+          </div>
+          <div class="modal-footer">       
+         	  <button class="btn btn-primary" ng-click="submitData()">Save</button>
+         	  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

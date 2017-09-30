@@ -1,0 +1,25 @@
+<div class="form-group">
+  <label for="categoryRuleBrand">Бренд:</label>
+  <select class="form-control" name="categoryRuleBrand" id="categoryRuleBrand" ng-options="option.name for option in last.refs.brands track by option.uuid" ng-model="last.entity.brand" ng-change="last.change()" ng-disabled="last.refs.brands.length == 0">
+  </select>
+</div>
+<div class="form-group">
+  <label for="categoryRuleBrand">Категория:</label>
+  <select class="form-control" name="categoryRuleCategory" id="categoryRuleCategory" ng-options="option.name for option in last.refs.categories track by option.uuid" ng-model="last.entity.category" ng-change="last.change()" ng-disabled="last.refs.categories.length == 0">
+  </select>
+</div>
+<div class="form-group">
+  <input class="form-control" ng-model="last.entity.name" ng-change="last.change()" type="text" placeholder="Имя правила">
+</div>
+<div class="form-group">
+  <input class="form-control" ng-model="last.entity.potentialStart" ng-change="last.change()" type="text" placeholder="Potential start">
+</div>
+<div class="form-group">
+  <input class="form-control" ng-model="last.entity.potentialEnd" ng-change="last.change()" type="text" placeholder="Potential end">
+</div>
+<div class="form-group">
+  <input class="form-control" ng-model="last.entity.proportionStart" ng-change="last.change()" type="text" placeholder="Proportion start">
+</div>
+<div class="form-group">
+  <input class="form-control" ng-model="last.entity.proportionEnd" ng-change="last.change()" type="text" placeholder="Proportion end">
+</div>

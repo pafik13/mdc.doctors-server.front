@@ -1,0 +1,25 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <!-- Category Rules -->
+  <div id="categoryrules" ng-controller="CategoryRuleController as categoryRuleCntrl">
+    <page-with-tiles 
+      page-header="Правила определения категории врача" 
+      add-button-caption="Добавить правило" 
+      model-meta="categoryRuleCntrl.meta" 
+      items="categoryRuleCntrl.categoryRules" 
+      loaded="categoryRuleCntrl.loaded" 
+      tile-class="panel-primary" 
+      tile-icon="fa fa-trademark fa-5x" 
+      field-for-tile-caption="name" 
+      field-for-tile-r-row-1="category.name" 
+      create-id="categoryrule_add" 
+      create-caption="Новое правило" 
+      before-create-params="categoryRuleCntrl.params" 
+      modal-create-template="/templates/modal/categoryRule.html" 
+      update-id="categoryrule_upd"
+      update-caption="Обновление:" 
+      field-for-update-caption="name" 
+      modal-update-template="/templates/modal/categoryRule.html">
+    </page-with-tiles>
+  </div>
+  <!-- ./Category Rules -->
+</div>

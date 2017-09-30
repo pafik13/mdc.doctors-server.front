@@ -12,7 +12,7 @@ var uuid = require("uuid");
  * @namespace Category
  */
 module.exports = {
-
+  /* global sails, LifecycleAction, Agent */
   attributes: {
     /**
      * Уникальный идентификатор категории
@@ -25,10 +25,11 @@ module.exports = {
       primaryKey: true,
       unique: true,
       index: true,
-      uuidv4: true,
-      defaultsTo: function() {
-        return uuid.v4();
-      },
+      // uuidv4: true,
+      enum: ['cFirst', 'cSecond', 'cThird', 'cForth', 'cFifth'],
+      // defaultsTo: function() {
+      //   return uuid.v4();
+      // },
     },
 
     /**

@@ -194,8 +194,8 @@ module.exports.routes = {
   'get /worktypes' : 'ViewController.worktypes',
   'get /materials' : 'ViewController.materials',
   'get /listedhospitals' : 'ViewController.listedhospitals',
-
-
+  'get /categoryrules' : 'ViewController.categoryrules',
+  'get /uploadfiles' : 'ViewController.uploadfiles',
 
   'get /net/options' : 'NetController.options',
   'get /place/options' : 'PlaceController.options',
@@ -217,6 +217,21 @@ module.exports.routes = {
 
   'post /photodata/upload' : 'PhotoDataController.upload',
   
+	'post /uploadfiles': {
+		controller	: 'uploadfiles',
+		action		  : 'create'
+	},
+	
+	'put /uploadfiles/:id': {
+		controller	: 'uploadfiles',
+		action		  : 'update'
+	},
+	
+	'delete /uploadfiles/:id': {
+		controller	: 'uploadfiles',
+		action		  : 'destroy'
+	}
+	
   // 'GET /attendance': {
   //   blueprint: "find", 
   //   criteria: {
